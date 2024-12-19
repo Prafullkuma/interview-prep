@@ -1,10 +1,10 @@
 import "./App.css";
-import DynamicForm from "./components/DynamicForm/dynamicForm";
+import FollowMouse from "./components/FollowMouse/FollowMouse";
 
 function App() {
   return (
     <>
-      <DynamicForm />
+      <FollowMouse />
     </>
   );
 }
