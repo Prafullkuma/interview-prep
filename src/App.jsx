@@ -1,10 +1,10 @@
 import "./App.css";
-import FollowMouse from "./components/FollowMouse/FollowMouse";
+import LoginForm from "./components/LoginForm/LoginForm";
 
 function App() {
   return (
     <>
-      <FollowMouse />
+      <LoginForm />
     </>
   );
 }

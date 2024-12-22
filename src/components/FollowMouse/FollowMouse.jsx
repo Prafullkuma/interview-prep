@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import "./style.css";
 
 const FollowMouse = () => {
@@ -8,12 +8,15 @@ const FollowMouse = () => {
   });
 
   const bodyRef = useRef(null);
+
   const mouseMove = (event) => {
     const xClient = event.clientX;
     const yClient = event.clientY;
+
     const firstElement = bodyRef.current.firstElementChild;
+
     firstElement.style.cssText = `
-        position:relative;
+        position: relative;
         top: ${yClient + 20}px;
         left: ${xClient - 20}px;
       `;
@@ -22,6 +25,7 @@ const FollowMouse = () => {
       yClient: yClient,
     });
   };
+
   useEffect(() => {
     bodyRef.current.addEventListener("mousemove", mouseMove);
     return () => bodyRef.current.removeEventListener("mousemove", mouseMove);
